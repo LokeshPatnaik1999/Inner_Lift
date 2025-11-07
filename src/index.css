@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: #020617;
+  color: #f3f4f6;
+}
+
+.card {
+  @apply bg-surface p-6 rounded-xl border border-border;
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-image: linear-gradient(to right, #facc15, #fbbf24);
+  color: #020617;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: box-shadow 200ms;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.15);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: #050816;
+  border: 1px solid #111827;
+  border-radius: 0.75rem;
+  color: #f3f4f6;
+  transition: all 200ms;
+}
+.btn-secondary:hover {
+  border-color: #facc15;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.1);
+}
+
+.btn-ghost {
+  padding: 0.75rem 1.5rem;
+  color: #f3f4f6;
+  transition: color 200ms;
+}
+.btn-ghost:hover {
+  color: #facc15;
+}
+
+.card {
+  background-color: #050816;
+  border: 1px solid #111827;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: box-shadow 200ms;
+}
+.card:hover {
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.1);
+}
+
+.card-soft {
+  background-image: radial-gradient(circle at top left, rgba(250,204,21,0.1), #020617 55%, #000 100%);
+  border: 1px solid #111827;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: box-shadow 200ms;
+}
+.card-soft:hover {
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.1);
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  background-color: #050816;
+  color: #9ca3af;
+}
+
+.badge-accent {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid #facc15;
+  background-color: rgba(250, 204, 21, 0.08);
+  color: #facc15;
+  font-weight: 500;
+}
