@@ -45,9 +45,13 @@ function App(){
       <nav className="bg-surface border-b border-border">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <Link to="/" className="font-bold text-xl text-accent">InnerLift</Link>
-          <div className="space-x-3">
+          <div className="flex items-center space-x-3">
             {user ? (
-              <button onClick={handleLogout} className="btn-secondary">Log Out</button>
+              <>
+                <Link to="/dashboard" className="btn-ghost">Dashboard</Link>
+                <Link to="/profile" className="btn-ghost">Profile</Link>
+                <button onClick={handleLogout} className="btn-secondary">Log Out</button>
+              </>
             ) : (
               <>
                 <Link to="/onboarding" className="btn-primary">Sign Up</Link>

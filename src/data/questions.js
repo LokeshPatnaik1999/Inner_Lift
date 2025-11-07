@@ -117,18 +117,127 @@ export const questionTree = {
     "options": [
       {
         "label": "Very consistent, same times weekly",
-        "next": "final",
+        "next": "q5",
         "weights": {"calm": 1, "motivation": 2, "social": 0, "consistency": 2, "intensity": 1}
       },
       {
         "label": "Flexible but regular",
-        "next": "final",
+        "next": "q5",
         "weights": {"calm": 0, "motivation": 1, "social": 1, "consistency": 1, "intensity": 0}
       },
       {
         "label": "Variable, when motivated",
-        "next": "final",
+        "next": "q5",
         "weights": {"calm": -1, "motivation": 0, "social": 0, "consistency": -1, "intensity": 1}
+      }
+    ]
+  },
+  "q5": {
+    "id": "q5",
+    "text": "What time of day do you prefer to work out?",
+    "options": [
+      {
+        "label": "Early morning (5-8 AM)",
+        "next": "q6",
+        "weights": {"calm": 1, "motivation": 2, "social": -1, "consistency": 2, "intensity": 1}
+      },
+      {
+        "label": "Mid-day (11 AM - 2 PM)",
+        "next": "q6",
+        "weights": {"calm": 1, "motivation": 1, "social": 0, "consistency": 1, "intensity": 0}
+      },
+      {
+        "label": "Evening (5-8 PM)",
+        "next": "q6",
+        "weights": {"calm": 0, "motivation": 1, "social": 2, "consistency": 1, "intensity": 1}
+      },
+      {
+        "label": "Flexible, whenever I can",
+        "next": "q6",
+        "weights": {"calm": 0, "motivation": 0, "social": 1, "consistency": -1, "intensity": 0}
+      }
+    ]
+  },
+  "q6": {
+    "id": "q6",
+    "text": "How do you handle setbacks or bad workout days?",
+    "options": [
+      {
+        "label": "Push through no matter what",
+        "next": "q7",
+        "weights": {"calm": -1, "motivation": 2, "social": 0, "consistency": 2, "intensity": 2}
+      },
+      {
+        "label": "Take it easy and adjust",
+        "next": "q7",
+        "weights": {"calm": 2, "motivation": 1, "social": 0, "consistency": 1, "intensity": -1}
+      },
+      {
+        "label": "Need encouragement from others",
+        "next": "q7",
+        "weights": {"calm": 0, "motivation": 0, "social": 2, "consistency": 0, "intensity": 0}
+      },
+      {
+        "label": "Skip and come back stronger",
+        "next": "q7",
+        "weights": {"calm": 1, "motivation": -1, "social": -1, "consistency": -1, "intensity": 0}
+      }
+    ]
+  },
+  "q7": {
+    "id": "q7",
+    "text": "What's your primary fitness goal right now?",
+    "options": [
+      {
+        "label": "Build strength and muscle",
+        "next": "q8",
+        "weights": {"calm": 0, "motivation": 2, "social": 0, "consistency": 2, "intensity": 2}
+      },
+      {
+        "label": "Lose weight/get lean",
+        "next": "q8",
+        "weights": {"calm": 0, "motivation": 2, "social": 1, "consistency": 2, "intensity": 1}
+      },
+      {
+        "label": "Improve mental health",
+        "next": "q8",
+        "weights": {"calm": 2, "motivation": 1, "social": 0, "consistency": 1, "intensity": -1}
+      },
+      {
+        "label": "Stay active and healthy",
+        "next": "q8",
+        "weights": {"calm": 1, "motivation": 1, "social": 1, "consistency": 1, "intensity": 0}
+      },
+      {
+        "label": "Train for an event/competition",
+        "next": "q8",
+        "weights": {"calm": 0, "motivation": 2, "social": 1, "consistency": 2, "intensity": 2}
+      }
+    ]
+  },
+  "q8": {
+    "id": "q8",
+    "text": "How do you like to celebrate fitness wins?",
+    "options": [
+      {
+        "label": "Share it with friends/community",
+        "next": "final",
+        "weights": {"calm": 0, "motivation": 1, "social": 2, "consistency": 1, "intensity": 1}
+      },
+      {
+        "label": "Keep it personal, quiet satisfaction",
+        "next": "final",
+        "weights": {"calm": 2, "motivation": 1, "social": -2, "consistency": 1, "intensity": 0}
+      },
+      {
+        "label": "Set a bigger goal immediately",
+        "next": "final",
+        "weights": {"calm": -1, "motivation": 2, "social": 0, "consistency": 2, "intensity": 2}
+      },
+      {
+        "label": "Reward myself with rest/treats",
+        "next": "final",
+        "weights": {"calm": 2, "motivation": 0, "social": 0, "consistency": 0, "intensity": -1}
       }
     ]
   }

@@ -40,20 +40,12 @@ export default function Silence(){
         modalTimeoutRef.current = null
       }
     }
-  }, [running])
+  }, [running, nav])
 
   function start(){ 
-    console.log('Start clicked. seconds:', seconds, 'running:', running)
-    if (seconds === 0) {
-      reset()
-    }
-    // If already running, do nothing
-    if (!running) setRunning(true)
-  }
-
-  function reset(){ 
-    setSeconds(600)
-    setRunning(false) 
+    console.log('Start clicked - navigating to questions page')
+    // Navigate directly to questions page when start is clicked
+    nav('/questions')
   }
 
   function format(sec){
@@ -63,47 +55,66 @@ export default function Silence(){
   }
 
   return (
-    <div className="max-w-2xl mx-auto text-center card-soft">
-      <h2 className="text-2xl font-semibold mb-2">10-minute silent reflection</h2>
-      <p className="text-sm text-gray-400 mb-6">Just breathe and reset your mind.</p>
+    <div className="max-w-2xl mx-auto text-center card-soft relative">
+      {/* Timer in top left corner when running */}
+      {running && (
+        <div className="absolute top-4 left-4 text-2xl font-mono text-accent">
+          {format(seconds)}
+        </div>
+      )}
 
-      <div className="text-6xl font-mono mb-6 text-accent tracking-widest 
-                    shadow-glow inline-block px-8 py-4 rounded-2xl 
-                    bg-accent-muted border border-accent">{format(seconds)}</div>
+      {/* Motivational Header */}
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold mb-4">
+          Take a Deep Breath <span className="text-orange-400">✨</span>
+        </h2>
+        <p className="text-lg text-gray-300 leading-relaxed mb-4">
+          Click <span className="text-orange-400 font-semibold">Start</span> to answer a few quick questions about your fitness mindset.
+        </p>
+        <p className="text-md text-gray-400">
+          Relax — our AI will find someone special who matches your energy, goals, and workout vibe. 💪
+        </p>
+      </div>
 
-      <div className="flex justify-center gap-3">
-        <button onClick={start} className="btn-primary" disabled={running || showModal}>{running ? 'Running…' : 'Start'}</button>
-        <button onClick={reset} className="btn-secondary" disabled={showModal}>Reset</button>
-        <button 
-          onClick={() => {
-            console.log('Navigating to questions page');
-            nav('/questions');
-          }} 
-          className="btn-ghost"
-        >
-          Skip for now
+      {/* Optional: Timer Display */}
+      {!running && (
+        <div className="mb-8">
+          <div className="inline-block px-6 py-4 bg-purple-500/10 border border-purple-500/30 rounded-2xl">
+            <p className="text-sm text-purple-400 mb-2">Optional: 10-Minute Mindfulness Reset</p>
+            <div className="text-4xl font-mono text-accent tracking-wider">
+              {format(seconds)}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Main CTA */}
+      <div className="flex flex-col items-center gap-4 mt-8">
+        <button onClick={start} className="btn-energetic text-lg px-12 py-4" disabled={showModal}>
+          🚀 Start My Journey
         </button>
-        {/* Test/shortcut button: immediately finish the reflection and go to questions (visible during testing) */}
-        <button
-          onClick={() => {
-            console.log('Finish now clicked — forcing navigation to /questions')
-            if (timerRef.current) {
-              clearInterval(timerRef.current)
-              timerRef.current = null
-            }
-            if (modalTimeoutRef.current) {
-              clearTimeout(modalTimeoutRef.current)
-              modalTimeoutRef.current = null
-            }
-            setRunning(false)
-            setShowModal(false)
-            nav('/questions')
-          }}
-          className="btn-ghost"
-          aria-label="Finish now and go to questions"
-        >
-          Finish now
-        </button>
+        
+        <p className="text-sm text-gray-500 max-w-md">
+          Answer 8 quick questions → Get your emotional profile → Meet your perfect gym buddy
+        </p>
+      </div>
+
+      {/* Motivational Footer */}
+      <div className="mt-12 pt-8 border-t border-border/50">
+        <div className="grid md:grid-cols-3 gap-6 text-center">
+          <div>
+            <div className="text-3xl mb-2">⚡</div>
+            <p className="text-sm text-gray-400">2 minutes to complete</p>
+          </div>
+          <div>
+            <div className="text-3xl mb-2">🎯</div>
+            <p className="text-sm text-gray-400">AI-powered matching</p>
+          </div>
+          <div>
+            <div className="text-3xl mb-2">🤝</div>
+            <p className="text-sm text-gray-400">Find your workout soulmate</p>
+          </div>
+        </div>
       </div>
 
       {/* Completion modal */}

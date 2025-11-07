@@ -15,6 +15,8 @@ import Silence from './pages/Silence'
 import AdaptiveQuestions from './pages/AdaptiveQuestions'
 import Results from './pages/Results'
 import Dashboard from './pages/Dashboard'
+import Profile from './pages/Profile'
+import SwipeBuddies from './pages/SwipeBuddies'
 import './index.css'
 
 // Debug logging
@@ -34,6 +36,8 @@ const router = createBrowserRouter(
       <Route path="questions" element={<AdaptiveQuestions />} />
       <Route path="results" element={<Results />} />
       <Route path="dashboard" element={<Dashboard />} />
+      <Route path="profile" element={<Profile />} />
+      <Route path="swipe" element={<SwipeBuddies />} />
       <Route path="*" element={<Navigate to="/" replace />} /> {/* Catch all invalid routes */}
     </Route>
   ),

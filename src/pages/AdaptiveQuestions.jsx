@@ -40,7 +40,7 @@ export default function AdaptiveQuestions() {
   useEffect(() => {
     console.log('Current question:', currentQ)
     console.log('Question data:', questionTree[currentQ])
-  }, [currentQ])
+  }, [currentQ, nav])
 
   function handleAnswer(option) {
     setTransitioning(true)

@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background-attachment: fixed;
+  color: #f3f4f6;
+}
+
+/* Alternative vibrant fitness theme */
+.card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+  border: 1px solid rgba(251, 146, 60, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 300ms;
+  backdrop-filter: blur(10px);
+}
+.card:hover {
+  border-color: rgba(251, 146, 60, 0.4);
+  box-shadow: 0 8px 30px rgba(251, 146, 60, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 200ms;
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+.btn-primary:hover {
+  box-shadow: 0 6px 25px rgba(249, 115, 22, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 0.75rem;
+  color: #f3f4f6;
+  transition: all 200ms;
+  backdrop-filter: blur(10px);
+}
+.btn-secondary:hover {
+  border-color: rgba(251, 146, 60, 0.5);
+  background-color: rgba(30, 41, 59, 1);
+  box-shadow: 0 4px 15px rgba(251, 146, 60, 0.2);
+}
+
+.btn-ghost {
+  padding: 0.75rem 1.5rem;
+  color: #f3f4f6;
+  transition: all 200ms;
+}
+.btn-ghost:hover {
+  color: #fb923c;
+  background-color: rgba(251, 146, 60, 0.1);
+  border-radius: 0.75rem;
+}
+
+.card-soft {
+  background: linear-gradient(135deg, 
+    rgba(251, 146, 60, 0.12) 0%, 
+    rgba(30, 41, 59, 0.95) 40%, 
+    rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid rgba(251, 146, 60, 0.25);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 300ms;
+  backdrop-filter: blur(10px);
+}
+.card-soft:hover {
+  box-shadow: 0 8px 30px rgba(251, 146, 60, 0.2);
+  border-color: rgba(251, 146, 60, 0.4);
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  background-color: rgba(30, 41, 59, 0.8);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.badge-accent {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  border: 1px solid #fb923c;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(249, 115, 22, 0.15));
+  color: #fdba74;
+  font-weight: 600;
+}
+
+/* Swipe card special styling */
+.swipe-card {
+  background: linear-gradient(135deg, 
+    rgba(15, 23, 42, 0.98) 0%, 
+    rgba(30, 41, 59, 0.98) 100%);
+  border: 2px solid rgba(251, 146, 60, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #1e293b);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}

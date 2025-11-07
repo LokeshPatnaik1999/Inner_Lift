@@ -26,33 +26,17 @@ body {
   box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
 }
 
-/* RED for urgent CTAs - Connect, Sign Up */
 .btn-primary {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
   font-weight: 600;
   border-radius: 0.875rem;
   transition: all 250ms;
-  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
 }
 .btn-primary:hover {
-  box-shadow: 0 6px 30px rgba(239, 68, 68, 0.6);
-  transform: translateY(-3px) scale(1.02);
-}
-
-/* ORANGE for energetic actions - Find Buddies, Browse */
-.btn-energetic {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-  color: white;
-  font-weight: 600;
-  border-radius: 0.875rem;
-  transition: all 250ms;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
-}
-.btn-energetic:hover {
-  box-shadow: 0 6px 30px rgba(249, 115, 22, 0.6);
+  box-shadow: 0 6px 30px rgba(99, 102, 241, 0.5);
   transform: translateY(-3px) scale(1.02);
 }
 
@@ -108,32 +92,16 @@ body {
   backdrop-filter: blur(5px);
 }
 
-/* ORANGE/YELLOW for match badges - high visibility */
 .badge-accent {
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
   border-radius: 9999px;
-  border: 1px solid rgba(251, 146, 60, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.6);
   background: linear-gradient(135deg, 
-    rgba(249, 115, 22, 0.2), 
-    rgba(251, 146, 60, 0.2));
-  color: #fdba74;
+    rgba(99, 102, 241, 0.15), 
+    rgba(139, 92, 246, 0.15));
+  color: #c4b5fd;
   font-weight: 600;
-}
-
-/* GREEN for success states only */
-.btn-success {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-  color: white;
-  font-weight: 600;
-  border-radius: 0.875rem;
-  transition: all 250ms;
-  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
-}
-.btn-success:hover {
-  box-shadow: 0 6px 30px rgba(34, 197, 94, 0.5);
-  transform: translateY(-3px) scale(1.02);
 }
 
 /* Glass morphism effect */
@@ -142,6 +110,3 @@ body {
   backdrop-filter: blur(25px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
-

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 
 export default function Login(){
@@ -6,6 +6,19 @@ export default function Login(){
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const nav = useNavigate()
+
+  useEffect(() => {
+    // Redirect if already logged in
+    try {
+      const user = JSON.parse(localStorage.getItem('innerlift_user') || 'null')
+      if (user) {
+        const analysis = JSON.parse(localStorage.getItem('innerlift_analysis') || 'null')
+        nav(analysis ? '/dashboard' : '/silence')
+      }
+    } catch (e) {
+      console.error('Error checking user status:', e)
+    }
+  }, [nav])
 
   function handleSubmit(e){
     e.preventDefault()

@@ -7,14 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#020617',
+        background: '#0a0e1a',
         surface: '#0f172a',
         border: '#1e293b',
-        accent: '#facc15',
-        'accent-dark': '#ca8a04'
+        accent: '#8b5cf6',
+        'accent-dark': '#6366f1'
       },
       backgroundImage: {
-        'gradient-yellow': 'linear-gradient(to right, #facc15, #fbbf24)',
+        'gradient-yellow': 'linear-gradient(135deg, #6366f1, #8b5cf6)',
       }
     },
   },
